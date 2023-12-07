@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #555;
+            color: #fff;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 1em;
+        }
+
+        section {
+            padding: 2em;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive Layout */
+        @media screen and (max-width: 600px) {
+            nav ul{justify-content:space-around;
+            }
+
+            nav li {
+                margin: 1em 0;
+            }
+        }
+
+        /* CSS Transition Effect */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>1 The webpage has a header, navigation menu, content area, and footer.<br/>
+2 The layout is responsive, with changes in the navigation menu for screens with a width of 600 pixels or less.The navigation menu comes in center for width greater than 600px and navigation menu take all space for width less than 600px.<br/>
+3 A simple CSS transition effect is applied to the button element, changing its background color smoothly on hover.</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Main Content</h2>
+        <p>This is the main content area of the webpage.</p>
+        <button aria-label="click me">Click me</button>
+    </section>
+
+    <footer>
+        <p><marquee>Footer Content (Rahul Chandnani)</marquee></p>
+    </footer>
+
+</body>
+</html>

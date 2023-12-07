@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Loading Example</title>
+    
+</head>
+<body>
+
+    <h1>Your Webpage Content</h1>
+
+    <img data-src="https://images.pexels.com/photos/65894/peacock-pen-alluring-yet-lure-65894.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Lazy Loaded Image 1" loading="lazy">
+    <img data-src="https://images.pexels.com/photos/15239/flower-roses-red-roses-bloom.jpg" alt="Lazy Loaded Image 2" loading="lazy">
+    <img data-src="https://images.pexels.com/photos/1433052/pexels-photo-1433052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Lazy Loaded Image 3" loading="lazy">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll('img[data-src]');
+
+            images.forEach((img) => {
+                img.setAttribute('src', img.getAttribute('data-src'));
+                img.onload = function () {
+                    img.removeAttribute('data-src');
+                };
+            });
+        });
+    </script>
+
+</body>
+</html>

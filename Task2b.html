@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <style>
+      
+        #slideshow {
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+           
+        }
+        .content{
+z-index:1;position:fixed;
+}
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            width: 100%;
+        }
+    </style>
+</head>
+<body><div>
+<h2 class="content">Image Carousel</h2></div>
+    <div id="slideshow">
+        <div class="slides">
+            <div class="slide"><img src="https://images.pexels.com/photos/65894/peacock-pen-alluring-yet-lure-65894.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Slide 1"></div>
+            <div class="slide"><img src="https://images.pexels.com/photos/15239/flower-roses-red-roses-bloom.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="https://images.pexels.com/photos/1433052/pexels-photo-1433052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Slide 3"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var currentIndex = 0;
+            var slides = $('.slide');
+
+            function showSlide(index) {
+                $('.slides').css('transform', 'translateX(' + (-index * 100) + '%)');
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                showSlide(currentIndex);
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                showSlide(currentIndex);
+            }
+
+            setInterval(nextSlide, 3000); // Auto play every 3 seconds
+
+            // You can add navigation buttons or customize as needed
+        });
+    </script>
+
+</body>
+</html>
